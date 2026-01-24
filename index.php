@@ -8,28 +8,15 @@
 </head>
 
 <body>
-  <form>
-    <label for="chat">Чат</label>
-    <input type="text" name="message">
-    <button>Отправить</button>
+  <form id="chat-form">
+    <input type="text" name="username" placeholder="Ваше имя" required>
+    <textarea name="message" placeholder="Сообщение" required></textarea>
+    <button type="submit">Отправить</button>
   </form>
-  <p id="result"></p>
+  <div id="chat-container">
+
+  </div>
+  <script src="scripts/main.js"></script>
 </body>
-
-<script>
-  document.querySelector('form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const formData = new FormData(this);
-
-    fetch('process.php', {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => response.text())
-      .then(data => console.log(data));
-  });
-
-</script>
 
 </html>
