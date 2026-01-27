@@ -4,7 +4,7 @@ document.getElementById('chat-form').addEventListener('submit', function (e) {
 
   const formData = new FormData(this);
 
-  fetch('send_message.php', {
+  fetch('message_processing/send_message.php', {
     method: 'POST',
     body: formData
   })
@@ -16,7 +16,7 @@ document.getElementById('chat-form').addEventListener('submit', function (e) {
 });
 
 function loadMessages() {
-  fetch('get_messages.php')
+  fetch('message_processing/get_messages.php')
     .then(response => response.text())
     .then(data => {
       document.getElementById('chat-container').innerHTML = data;

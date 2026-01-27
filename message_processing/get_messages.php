@@ -1,5 +1,5 @@
 <?php
-require 'connect_to_db.php';
+include_once '../configurable/connect_to_db.php';
 
 $stmt = $pdo->query("SELECT * FROM messages ORDER BY created_at DESC LIMIT 50");
 $messages = $stmt->fetchAll();
