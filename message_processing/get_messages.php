@@ -1,7 +1,13 @@
 <?php
 include_once '../configurable/connect_to_db.php';
 
-$stmt = $pdo->query("SELECT * FROM messages ORDER BY created_at DESC LIMIT 50");
+$stmt = $pdo->query("SELECT m.message, m.created_at, u.username 
+FROM messages m 
+LEFT JOIN users u 
+ON m.user_id = u.user_id 
+ORDER BY m.created_at 
+DESC LIMIT 50");
+
 $messages = $stmt->fetchAll();
 
 foreach (array_reverse($messages) as $msg): ?>
