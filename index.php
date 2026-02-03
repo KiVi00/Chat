@@ -5,7 +5,7 @@ include_once 'utility/generateCsrfToken.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -28,9 +28,6 @@ include_once 'utility/generateCsrfToken.php';
     <input type="hidden" name="csrf_token" value="<?php echo generateCsrfToken(); ?>">
     <button>Войти</button>
   </form>
-  
-
-  <p><?php var_dump($_SESSION) ?></p>
 </body>
 
 </html>
