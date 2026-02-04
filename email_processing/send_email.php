@@ -25,12 +25,13 @@ try {
     $mail->Password = $_ENV['APP_PASSWORD']; // Заменить на пароль от приложения (gmail, яндекс и др.)
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
+    $mail->CharSet = 'UTF-8';
 
-    $mail->setFrom('yourchat@gmail.com', 'Your Chat');
-    $mail->addAddress($_SESSION['email'], 'you');
+    $mail->setFrom('vinogradovkirill123@gmail.com', 'Чат');
+    $mail->addAddress($_SESSION['email'], 'Крот');
 
     $mail->isHTML(true);
-    $mail->Subject = 'Подтверждение почты';
+    $mail->Subject = 'Подтверждение email';
     $mail->Body = "<h1>Код подтверждения: $code</h1>";
     $mail->AltBody = "<h1>Код подтверждения: $code</h1>";
 
