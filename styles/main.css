@@ -2,3 +2,7 @@
   margin: 0px;
   box-sizing: border-box;
 }
+
+.current_user {
+  color: red;
+}
