@@ -1,4 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0A1931;
+  position: relative;
+  overflow: hidden;
+  color: #dbdbdb;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  width: 180vmax;
+  height: 180vmax;
+  background: radial-gradient(circle, #1a237e 0%, transparent 40%),
+              radial-gradient(circle, #4a148c 10%, transparent 30%),
+              radial-gradient(circle, #311b92 20%, transparent 30%);
+  background-blend-mode: screen;
+  filter: blur(30px);
+  opacity: 0.3;
+  z-index: -1;
+  animation: move 50s linear infinite;
+}
+
+body::after {
+  animation-direction: reverse;
+  opacity: 0.2;
+}
+
+@keyframes move {
+  0% { transform: translate(0, 0); }
+  30% { transform: translate(-30vmax, 30vmax); }
+  60% { transform: translate(30vmax, -30vmax); }
+  100% { transform: translate(0, 0); }
+}
+
+p {
+  display: inline-block;
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding: 8px 15px;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.05);
+  width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(105, 90, 166, 0.3),
+              0 0 40px rgba(105, 90, 166, 0.1) inset,
+              0 0 10px rgba(255, 255, 255, 0.1);
+  margin: 15px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+  font-weight: 500;
+  padding-left: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(165, 180, 252, 0.5);
+  box-shadow: 0 0 0 2px rgba(165, 180, 252, 0.2);
+}
+
+button {
+  margin: 15px auto 0 auto;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #8b5cf6 20%, #7c3aed 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 300;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  display: block;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6),
+              0 3px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #9c72f8 0%, #8c4cf0 100%);
+}
+
+.variants {
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 8px 15px;
+  margin: 0 10px 15px 0;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

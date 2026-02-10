@@ -10,16 +10,19 @@ include_once 'utility/generateCsrfToken.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
   <title>Вход в чат</title>
 </head>
 
 <body>
-  <a href="chat.php">Чат</a>
-  <a href="registration.php">Зарегистрироваться</a>
   <p>
     <?= $_SESSION['error'] ?? '' ?>
     <?php unset($_SESSION['error']); ?>
   </p>
+  <div class="variants">
+    <a href="chat.php">Чат</a>
+    <a href="registration.php">Зарегистрироваться</a>
+  </div>
   <form action="auth/auth.php" method="post">
     <label for="email">Email</label>
     <input type="email" id="email" name="email">
@@ -28,9 +31,6 @@ include_once 'utility/generateCsrfToken.php';
     <input type="hidden" name="csrf_token" value="<?php echo generateCsrfToken(); ?>">
     <button>Войти</button>
   </form>
-  
-
-  <p><?php var_dump($_SESSION) ?></p>
 </body>
 
 </html>

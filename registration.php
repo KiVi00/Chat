@@ -9,16 +9,19 @@ include_once 'utility/generateCsrfToken.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
   <title>Регистрация в чат</title>
 </head>
 
 <body>
-  <a href="chat.php">Чат</a>
-  <a href="index.php">Войти</a>
   <p>
     <?= $_SESSION['error'] ?? '' ?>
     <?php unset($_SESSION['error']); ?>
   </p>
+  <div class="variants">
+      <a href="chat.php">Чат</a>
+    <a href="index.php">Войти</a>
+  </div>
   <form action="auth/register.php" method="post">
     <label for="username">Имя в чате</label>
     <input type="text" id="username" pattern="[a-zA-Z, 0-9]{5,15}" name="username">
