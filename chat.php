@@ -14,6 +14,7 @@ include_once 'utility/checkAuth.php';
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/chat.css">
   <title>Чат</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
