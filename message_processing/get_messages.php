@@ -2,7 +2,9 @@
 session_start();
 include_once '../configurable/connect_to_db.php';
 
-$stmt = $pdo->query("SELECT m.message, m.created_at, u.username, m.user_id
+$current_user_id = $_SESSION['user_id'] ?? null;
+
+$stmt = $pdo->query("SELECT m.user_id, m.message, m.created_at, u.username 
 FROM messages m 
 LEFT JOIN users u 
 ON m.user_id = u.user_id 
