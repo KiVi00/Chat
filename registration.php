@@ -14,12 +14,14 @@ include_once 'utility/generateCsrfToken.php';
 </head>
 
 <body>
-  <p>
-    <?= $_SESSION['error'] ?? '' ?>
-    <?php unset($_SESSION['error']); ?>
-  </p>
+  <?php if (isset($_SESSION['error'])): ?>
+    <p>
+      <?= $_SESSION['error'] ?? '' ?>
+      <?php unset($_SESSION['error']); ?>
+    </p>
+  <?php endif ?>
   <div class="variants">
-      <a href="chat.php">Чат</a>
+    <a href="chat.php">Чат</a>
     <a href="index.php">Войти</a>
   </div>
   <form action="auth/register.php" method="post">
